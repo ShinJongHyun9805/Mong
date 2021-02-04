@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".JoinActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ibmplexsanskrsemibold"
+            android:text="회원가입"
+            android:textColor="#050505"
+            android:textSize="40dp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadeScrollbars="true"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                    android:hint="인증받을 실제 메일을 입력해 주세요."
+                    android:letterSpacing="0"
+                    android:lineSpacingExtra="0dp"
+                    android:lineSpacingMultiplier="1"
+                    android:textScaleX="1"
+                    android:textSize="20dp" />
+
+                <com.puppyland.mongnang.widget.FButton
+                    android:id="@+id/btn_auth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                    android:text="메일 전송"
+                    android:textColor="#FFFFFF"
+                    fbutton:cornerRadius="10dp"
+                    fbutton:shadowEnabled="true"
+                    fbutton:shadowHeight="3dp" />
+
+                <LinearLayout
+                    android:id="@+id/auth_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="3">
+
+                    <EditText
+                        android:id="@+id/input_auth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/ibmplexsanskrsemibold"
+                        android:hint="인증키를 입력해 주세요"
+                        android:letterSpacing="0"
+                        android:lineSpacingExtra="0dp"
+                        android:lineSpacingMultiplier="1"
+                        android:textScaleX="1"
+                        android:textSize="20dp" />
+
+                    <com.puppyland.mongnang.widget.FButton
+                        android:id="@+id/btn_completeauth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/ibmplexsanskrsemibold"
+                        android:text="인증완료"
+                        android:textColor="#FFFFFF"
+                        fbutton:cornerRadius="10dp"
+                        fbutton:shadowEnabled="true"
+                        fbutton:shadowHeight="3dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <EditText
+                        android:id="@+id/nickname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="12dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/ibmplexsanskrsemibold"
+                        android:hint="닉네임"
+                        android:letterSpacing="0"
+                        android:lineSpacingExtra="0dp"
+                        android:lineSpacingMultiplier="1"
+                        android:textScaleX="1"
+                        android:textSize="20dp" />
+
+                    <com.puppyland.mongnang.widget.FButton
+                        android:id="@+id/btn_check"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/ibmplexsanskrsemibold"
+                        android:text="중복확인"
+                        android:textColor="#FFFFFF"
+                        fbutton:cornerRadius="10dp"
+                        fbutton:shadowEnabled="true"
+                        fbutton:shadowHeight="3dp" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/editPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                    android:hint="비밀번호 6자리 이상"
+                    android:inputType="textPassword"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/editPassCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                    android:hint="비밀번호 확인"
+                    android:inputType="textPassword"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/editAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:digits="0123456789"
+                    android:maxLength="2"
+                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                    android:hint="나이"
+                    android:inputType="number"
+                    android:textSize="20dp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radiobutton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/ibmplexsanskrsemibold"
+                        android:text="여자"
+                        android:textColor="#050505" />
+
+                    <RadioButton
+                        android:id="@+id/radiobutton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:fontFamily="@font/ibmplexsanskrsemibold"
+                        android:text="남자"
+                        android:textColor="#050505" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/addressSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editInputD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                    android:textSize="20dp"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true" />
+
+
+                <EditText
+                    android:id="@+id/editInputE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                    android:textSize="20dp"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true" />
+
+
+                <EditText
+                    android:id="@+id/editInputF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                    android:textSize="20dp"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <WebView
+                    android:id="@+id/daum_webview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    tools:ignore="WebViewLayout" />
+
+                <com.puppyland.mongnang.widget.FButton
+                    android:id="@+id/btnAddressResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                    android:text="주소 검색"
+                    android:textColor="#FFFFFF"
+                    fbutton:buttonColor="#FAFAD2"
+                    fbutton:cornerRadius="10dp"
+                    fbutton:shadowEnabled="true"
+                    fbutton:shadowHeight="3dp" />
+
+                <com.puppyland.mongnang.widget.FButton
+                    android:id="@+id/btnResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="12dp"
+                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                    android:text="다음"
+                    android:textColor="#FFFFFF"
+                    fbutton:buttonColor="#FAFAD2"
+                    fbutton:cornerRadius="10dp"
+                    fbutton:shadowEnabled="true"
+                    fbutton:shadowHeight="3dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

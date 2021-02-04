@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativelayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#EBF5F8F6"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_weight="3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </LinearLayout>
+    <ImageView
+        android:layout_weight="7"
+        android:id="@+id/myImageView"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="200dp"
+        android:layout_height="260dp"
+        android:layout_gravity="center"
+        android:src="@drawable/monglogo2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <com.kakao.usermgmt.LoginButton
+            android:id="@+id/btn_kakao_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="16dp"
+            android:lineSpacingExtra ="0dp"
+            android:lineSpacingMultiplier="1"
+            android:letterSpacing="0"
+            android:textScaleX="1"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <com.puppyland.mongnang.widget.FButton
+            android:id="@+id/memberLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:lineSpacingExtra ="0dp"
+            android:lineSpacingMultiplier="1"
+            android:letterSpacing="0"
+            android:textScaleX="1"
+            android:fontFamily="@font/ibmplexsanskrsemibold"
+            android:gravity="center"
+            android:text="로그인"
+            android:textColor="#FFFFFF"
+            fbutton:cornerRadius="10dp"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="3dp" />
+
+        <com.puppyland.mongnang.widget.FButton
+            android:id="@+id/memberJoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:lineSpacingExtra ="0dp"
+            android:lineSpacingMultiplier="1"
+            android:letterSpacing="0"
+            android:textScaleX="1"
+            android:fontFamily="@font/ibmplexsanskrsemibold"
+            android:gravity="center"
+            android:text="회원가입"
+            android:textColor="#FFFFFF"
+            fbutton:cornerRadius="10dp"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="3dp" />
+    </LinearLayout>
+</LinearLayout>

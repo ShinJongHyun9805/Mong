@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_gravity="center"
+                android:layout_margin="9dp"
+                android:id="@+id/userProfileImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp" />
+
+            <TextView
+                android:id="@+id/Tx_AcceptUserId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/ibmplexsanskrsemibold"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/Tx_NoAcceptUserNickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left" />
+
+            <LinearLayout
+                android:id="@+id/chatuserLinear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:weightSum="9">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7">
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/Tx_chatting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                    android:gravity="center"
+                    android:text="채팅하기" />
+
+                <TextView
+                    android:id="@+id/Tx_chattingDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                    android:gravity="center"
+                    android:text="삭제" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
