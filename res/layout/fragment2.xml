@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context="com.puppyland.mongnang.fragment.Fragment2">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_rectangle2"
+                android:backgroundTint="#FFF178"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9"
+                        android:gravity="left"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginBottom="6dp"
+                            android:fontFamily="@font/ibmplexsanskrsemibold"
+                            android:text="어서오세요." />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="24dp"
+                            android:fontFamily="@font/ibmplexsanskrsemibold"
+                            android:text="오늘의 날씨"
+                            android:textColor="#050505"
+                            android:textSize="24dp" />
+                    </LinearLayout>
+
+                    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <com.andremion.floatingnavigationview.FloatingNavigationView
+                            android:id="@+id/floating_navigation_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_margin="@dimen/fab_margin"
+                            android:backgroundTint="#FFFFFF"
+                            android:theme="@style/AppTheme.AppBarOverlay"
+                            android:tint="#000000"
+                            app:borderWidth="0dp"
+                            app:drawMenuBelowFab="true"
+                            app:headerLayout="@layout/navigation_view_header"
+                            app:itemIconTint="#000000"
+                            app:itemTextColor="#000000"
+                            app:menu="@menu/menu_navigation_view" />
+                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                </LinearLayout>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginBottom="24dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="10dp"
+                    app:cardMaxElevation="10dp">
+
+                    <TextView
+                        android:id="@+id/Tx_check"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ibmplexsanskrsemibold"
+                        android:gravity="center"
+                        android:text="날씨 확인은 '여기' 눌러주세요" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/Lottie_WeatherWalk"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        app:lottie_fileName="9711-payment-from-illustration-animation.json" />
+
+                    <LinearLayout
+                        android:id="@+id/exweather"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <com.wang.avi.AVLoadingIndicatorView
+                            android:id="@+id/avi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="30dp"
+                            android:visibility="gone"
+                            app:indicatorColor="#000000"
+                            app:indicatorName="BallSpinFadeLoaderIndicator" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textval"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                                    android:textColor="#050505"
+                                    android:textSize="18dp"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:id="@+id/T3H"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                                    android:textSize="13dp"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:id="@+id/weatherID"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:fontFamily="@font/ibmplexsanskrsemibold"
+                                    android:textSize="13dp"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/Lottie_weather"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:layout_gravity="center"
+                                    android:visibility="gone"
+                                    app:lottie_fileName="14444-sunny.json" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/ibmplexsanskrsemibold"
+                android:includeFontPadding="false"
+                android:text="나의 메뉴"
+                android:textColor="#050505"
+                android:textSize="24dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_border"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/Lottie_dog1"
+                            android:layout_width="match_parent"
+                            android:layout_height="125dp"
+                            app:lottie_fileName="30281-storyboard-icon.json" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ibmplexsanskrsemibold"
+                            android:gravity="center"
+                            android:text="피드"
+                            android:textColor="#000000"
+                            android:textSize="24dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_border"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/Lottie_story"
+                            android:layout_width="match_parent"
+                            android:layout_height="125dp"
+                            android:layout_gravity="center"
+                            app:lottie_fileName="23675-read-a-book.json" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ibmplexsanskrsemibold"
+                            android:gravity="center"
+                            android:text="스토리"
+                            android:textColor="#000000"
+                            android:textSize="24dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/ibmplexsanskrsemibold"
+                android:includeFontPadding="false"
+                android:text="커뮤니티"
+                android:textColor="#090909"
+                android:textSize="24dp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_weight="1"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/Lottie_chat1"
+                            android:layout_width="80dp"
+                            android:layout_height="79dp"
+                            android:layout_gravity="center"
+                            app:lottie_fileName="26433-chit-chatting-rounded.json" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/ibmplexsanskrsemibold"
+                            android:gravity="center"
+                            android:text="채팅"
+                            android:textColor="#050505"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/Lottie_board"
+                            android:layout_width="80dp"
+                            android:layout_height="78dp"
+                            android:layout_gravity="center"
+                            app:lottie_fileName="lf30_editor_ngyvkn3r.json" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/ibmplexsanskrsemibold"
+                            android:gravity="center"
+                            android:text="게시판"
+                            android:textColor="#050505"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/Lottie_dog2"
+                            android:layout_width="80dp"
+                            android:layout_height="78dp"
+                            app:lottie_fileName="24278-pet-lovers.json" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/ibmplexsanskrsemibold"
+                            android:gravity="center"
+                            android:text="주변유저"
+                            android:textColor="#050505"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/Lottie_store"
+                            android:layout_width="80dp"
+                            android:layout_height="79dp"
+                            android:layout_gravity="center"
+                            app:lottie_fileName="21249-shopping-cart.json" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/ibmplexsanskrsemibold"
+                            android:gravity="center"
+                            android:text="상점"
+                            android:textColor="#050505"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/ibmplexsanskrsemibold"
+                android:includeFontPadding="false"
+                android:text="후기공유"
+                android:textColor="#050505"
+                android:textSize="24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="30dp"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/LL_hospital"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_border2"
+                    android:orientation="vertical">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/Lottie_hospital"
+                        android:layout_width="match_parent"
+                        android:layout_height="125dp"
+                        app:lottie_fileName="15411-angoamericana-1.json" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ibmplexsanskrsemibold"
+                        android:gravity="center"
+                        android:text="병원"
+                        android:textColor="#000000"
+                        android:textSize="24dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LL_toy"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_border2"
+                    android:orientation="vertical">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/Lottie2"
+                        android:layout_width="match_parent"
+                        android:layout_height="125dp"
+                        app:lottie_fileName="lf30_editor_yjixlnlv.json" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ibmplexsanskrsemibold"
+                        android:gravity="center"
+                        android:text="기부하기"
+                        android:textColor="#000000"
+                        android:textSize="24dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
